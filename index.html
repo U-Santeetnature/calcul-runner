@@ -25,7 +25,7 @@ let level=1,qIndex=0,hearts=5,score=0,time=5,question=null,timerId=null,used=new
 const best=()=>Number(localStorage.getItem('calculRunnerBest')||0); const fmt=n=>String(n).padStart(6,'0');
 function show(id){screens.forEach(s=>$(s).classList.toggle('hidden',s!==id)); $('bestMenu').textContent=fmt(best())}
 function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a} function pick(a){return a[rand(0,a.length-1)]} function gcd(a,b){while(b){[a,b]=[b,a%b]}return Math.abs(a)||1}
-function uniqAnswers(correct, values, count=5){let arr=[String(correct)],seen=new Set(arr); for(const v of values){v=String(v);if(!seen.has(v)){seen.add(v);arr.push(v)}} while(arr.length<count){let v=String(Number(correct)+rand(-12,12));if(!seen.has(v)){seen.add(v);arr.push(v)}} return arr.sort(()=>Math.random()-.5)}
+ function uniqAnswers(correct, values, count=5){let arr=[String(correct)],seen=new Set(arr); for(let v of values){v=String(v);if(!seen.has(v)){seen.add(v);arr.push(v)}} while(arr.length<count){let v=String(Number(correct)+rand(-12,12));if(!seen.has(v)){seen.add(v);arr.push(v)}} return arr.sort(()=>Math.random()-.5)}
 function numeric(expr,ans,key,count=5){return {expr,ans:String(ans),answers:uniqAnswers(ans,[ans+1,ans-1,ans*2,-ans,ans+rand(2,8),ans-rand(2,8)],count),key}}
 function makeQuestion(l){let a,b,op,ans;
  if(l===1){a=rand(-9,9);b=rand(-9,9);op=pick(['+','−','×','÷']);if(op==='÷'){b=rand(-9,9)||1; a=b*rand(-9,9)} ans=op==='+'?a+b:op==='−'?a-b:op==='×'?a*b:a/b;return numeric(`${a} ${op} ${b} = ?`,ans,`1|${a}|${op}|${b}`)}
