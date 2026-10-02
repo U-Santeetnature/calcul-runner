@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#071a36">
+<link rel="manifest" href="./manifest.webmanifest">
 <title>Calcul Runner</title>
 <style>
 :root{--bg:#06142c;--panel:#0d2547;--panel2:#12365d;--line:#1c6e91;--gold:#ffd34e;--cyan:#65e8e7;--ink:#edf7ff;--muted:#93aec5;--red:#ff6475;--green:#63e69a}
@@ -82,5 +83,6 @@ function playMusic(){if(audioUrl){audio.src=audioUrl;audio.loop=true;audio.play(
 function stopMusic(){clearInterval(melodyTimer);if(audio)audio.pause()}
 $('playBtn').onclick=start;$('againBtn').onclick=start;$('menuBtn').onclick=()=>{stopMusic();show('menu')};$('audioBtn').onclick=()=>show('settings');$('rulesBtn').onclick=()=>show('rules');$('backAudio').onclick=()=>show('menu');$('backRules').onclick=()=>show('menu');$('testAudio').onclick=()=>{if(audioUrl){audio.src=audioUrl;audio.loop=true;audio.play()}else playMusic()};$('audioFile').onchange=e=>{let f=e.target.files[0];if(f){audioUrl=URL.createObjectURL(f);$('chosenAudio').textContent=f.name;$('menuAudio').textContent='PISTE : '+f.name}};$('bestMenu').textContent=fmt(best());
 </script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"))}</script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "name": "Calcul Runner",
+  "short_name": "Calcul Runner",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020914",
+  "theme_color": "#071a36",
+  "description": "Jeu français de calcul rapide avec 7 niveaux."
+}
