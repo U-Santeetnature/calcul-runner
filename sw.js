@@ -1,4 +1,4 @@
-const CACHE = 'calcul-runner-v2';
+const CACHE = 'calcul-runner-v3';
 const CORE = [
   './', './index.html', './runner.png', './obstacle.png', './cameroon_inspired_instrumental.mp3', './manifest.webmanifest'
 ];
