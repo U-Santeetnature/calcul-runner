@@ -8,7 +8,40 @@
 <style>
 :root{--bg:#06142c;--panel:#0d2547;--panel2:#12365d;--line:#1c6e91;--gold:#ffd34e;--cyan:#65e8e7;--ink:#edf7ff;--muted:#93aec5;--red:#ff6475;--green:#63e69a}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#020914;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}body{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:12px;overflow-x:hidden}.app{width:min(100%,720px);aspect-ratio:1/1;min-height:580px;position:relative;overflow:hidden;border:1px solid #1f5d7a;border-radius:22px;background:radial-gradient(circle at 72% 12%,#16466a 0,transparent 33%),linear-gradient(#0a1d3b 0 61%,#12375a 61% 100%);box-shadow:0 22px 70px #0009}.app:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 98px,#ffffff08 99px 100px),linear-gradient(90deg,transparent 0 20%,#ffffff05 20.2% 20.5%,transparent 20.7% 80%,#ffffff05 80.2% 80.5%,transparent 80.7%);pointer-events:none}.ground{position:absolute;bottom:45px;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,#e8f8ff 0 18px,transparent 18px 40px);opacity:.9}.screen{position:absolute;inset:0;padding:clamp(18px,4vw,34px);display:flex;flex-direction:column;align-items:center;z-index:2}.hidden{display:none!important}.brand{margin-top:4vh;text-align:center;letter-spacing:.12em;color:var(--gold);font-size:clamp(29px,7vw,52px);line-height:.98;text-shadow:0 0 22px #ffd34e55}.brand span{display:block}.tag{font-size:12px;color:var(--muted);margin:14px 0 22px}.panel{width:min(100%,560px);background:#091d3be8;border:1px solid #27718a;border-radius:20px;padding:clamp(18px,4vw,30px);box-shadow:0 12px 32px #0005;backdrop-filter:blur(4px)}button{border:0;border-radius:999px;padding:13px 20px;font:inherit;color:var(--ink);background:#145177;cursor:pointer;touch-action:manipulation;transition:.15s transform,.15s filter}button:active{transform:scale(.97)}button:hover{filter:brightness(1.15)}.primary{background:var(--gold);color:#19233b;font-weight:800;width:100%;font-size:16px}.row{display:flex;gap:10px;justify-content:center}.row button{flex:1}.small{font-size:12px;color:var(--muted);text-align:center;margin-top:25px}.menu-record{text-align:center;color:#d9e7f3;margin:15px 0 23px}.menu-record b{color:var(--gold);letter-spacing:.08em}.audio-name{font-size:12px;color:var(--muted);text-align:center;margin-top:20px}.titlebar{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px}.level{color:var(--cyan);font-size:14px;font-weight:800}.timer{font-size:clamp(28px,6vw,42px);font-weight:900;color:var(--gold);min-width:78px;text-align:right}.timer.warn{color:var(--red);animation:pulse .5s infinite alternate}@keyframes pulse{to{transform:scale(1.08)}}.hearts{font-size:clamp(24px,5vw,35px);letter-spacing:4px;color:var(--red);filter:drop-shadow(0 0 6px #ff647588);margin:10px 0 5px}.scoreline{display:flex;justify-content:space-between;width:100%;font-size:12px;color:var(--muted)}.runner-zone{height:28%;min-height:135px;width:100%;position:relative;margin:8px 0 6px}.runner{position:absolute;bottom:13px;left:13%;width:clamp(52px,11vw,92px);height:clamp(62px,13vw,112px);filter:drop-shadow(0 7px 5px #0007);transition:transform .35s}.runner img,.obstacle img{width:100%;height:100%;object-fit:contain;display:block}.obstacle{position:absolute;bottom:12px;right:17%;width:clamp(48px,10vw,82px);height:clamp(58px,12vw,98px);filter:drop-shadow(0 7px 5px #0007);transition:transform .7s}.runner.dodge{transform:translate(100px,-38px) rotate(-8deg)}.runner.hit{animation:hit .5s}@keyframes hit{50%{transform:rotate(24deg) translateY(8px);filter:grayscale(1)}}.obstacle{position:absolute;bottom:12px;right:17%;font-size:clamp(42px,8vw,67px);transition:transform .7s}.obstacle.clear{transform:translateX(-210px);opacity:.3}.calc-card{width:100%;text-align:center;background:#102e50;border:1px solid #276482;border-radius:16px;padding:16px 10px;margin:6px 0 12px}.question{font-size:clamp(21px,5vw,38px);font-weight:800;letter-spacing:.02em;word-break:break-word}.hint{font-size:11px;color:var(--muted);margin-top:4px}.answers{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:100%}.answers.eight{grid-template-columns:repeat(4,1fr)}.answer{min-height:48px;padding:9px 3px;border-radius:12px;background:#174b70;border:1px solid #347e9c;font-size:clamp(14px,3vw,20px);font-weight:700;overflow:hidden}.answer.good{background:#237b55;border-color:var(--green)}.answer.bad{background:#803b54;border-color:var(--red)}.feedback{height:27px;text-align:center;font-weight:700;color:var(--muted);padding-top:9px;font-size:13px}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}.dialog h2{text-align:center;color:var(--gold);margin-top:0}.dialog p{color:var(--muted);line-height:1.5}.file{display:block;width:100%;padding:12px;border:1px dashed #4b8eaa;border-radius:12px;color:var(--muted);margin:15px 0}.rules{font-size:13px;line-height:1.6;color:#c8dbea}.end-score{text-align:center;font-size:46px;font-weight:900;color:var(--gold);margin:12px}.toast{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#071a36ee;border:1px solid var(--cyan);border-radius:14px;padding:14px 22px;z-index:8;pointer-events:none}.footer-note{position:absolute;bottom:16px;color:#7f9db2;font-size:11px;text-align:center;z-index:3;left:0;right:0}@media(max-height:680px){.app{min-height:0}.brand{margin-top:1vh}.runner-zone{min-height:95px}.footer-note{display:none}.panel{padding:16px}}
-.runner img{animation:runCycle .34s infinite alternate ease-in-out;transform-origin:bottom center}@keyframes runCycle{from{transform:translateY(0) rotate(-2deg) scaleY(1)}to{transform:translateY(-7px) rotate(2deg) scaleY(1.035)}}.runner.dodge img{animation:none}</style>
+.runner img{animation:runCycle .34s infinite alternate ease-in-out;transform-origin:bottom center}@keyframes runCycle{from{transform:translateY(0) rotate(-2deg) scaleY(1)}to{transform:translateY(-7px) rotate(2deg) scaleY(1.035)}}.runner.dodge img{animation:none}/* mobileFix: affichage propre sur téléphones */
+@media (max-width:600px){
+ body{padding:0;align-items:flex-start;min-height:100svh}
+ .app{width:100vw;height:100vw;min-height:0;max-height:100svh;border-radius:0;border-left:0;border-right:0}
+ .screen{padding:12px}
+ .brand{margin-top:2vh;font-size:clamp(25px,8vw,38px)}
+ .tag{font-size:10px;margin:8px 0 12px}
+ .panel{padding:14px;border-radius:14px}
+ .small{font-size:10px}
+ .menu-record{margin:9px 0 14px;font-size:12px}
+ button{padding:10px 8px;font-size:12px}
+ .row{gap:6px}
+ .runner-zone{height:22%;min-height:70px;margin:5px 0}
+ .calc-card{padding:10px 6px;margin:4px 0 7px}
+ .question{font-size:clamp(18px,5.5vw,28px)}
+ .hint{font-size:9px}
+ .answers{gap:5px}
+ .answer{min-height:36px;padding:5px 2px;font-size:clamp(12px,3.5vw,16px);border-radius:8px}
+ .feedback{height:20px;padding-top:5px;font-size:10px}
+ .hearts{margin:5px 0 2px;font-size:23px}
+ .scoreline{font-size:10px}
+ .timer{font-size:29px}
+ .footer-note{bottom:7px;font-size:9px}
+ .dialog{margin-top:2vh!important}
+}
+@media (max-width:600px) and (max-height:650px){
+ .app{height:calc(100svh - 8px);width:calc(100vw - 8px);margin:4px;border-radius:14px}
+ .runner-zone{height:19%;min-height:54px}
+ .runner{width:60px;height:68px}
+ .obstacle{width:52px;height:60px}
+ .calc-card{padding:7px 5px}
+ .answer{min-height:30px}
+}
+</style>
 </head>
 <body>
 <main class="app" id="app"><div class="ground"></div><div class="footer-note">Hors ligne • 7 niveaux • 70 calculs</div>
